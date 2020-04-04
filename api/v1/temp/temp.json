@@ -1,0 +1,89 @@
+{
+  "geocoded_waypoints": [
+    {
+      "geocoder_status": "OK",
+      "place_id": "ChIJf3Xp8Je6fRcRhKOEeX2j-qI",
+      "types": [
+        "street_address"
+      ]
+    },
+    {
+      "geocoder_status": "OK",
+      "place_id": "ChIJf3Xp8Je6fRcRhKOEeX2j-qI",
+      "types": [
+        "street_address"
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "bounds": {
+        "northeast": {
+          "lat": 0.3712634,
+          "lng": 32.5606139
+        },
+        "southwest": {
+          "lat": 0.3712634,
+          "lng": 32.5606139
+        }
+      },
+      "copyrights": "Map data ©2020",
+      "legs": [
+        {
+          "distance": {
+            "text": "1 m",
+            "value": 0
+          },
+          "duration": {
+            "text": "1 min",
+            "value": 0
+          },
+          "end_address": "7 Nalumansi Hajalah Cl, Kampala, Uganda",
+          "end_location": {
+            "lat": 0.3712634,
+            "lng": 32.5606139
+          },
+          "start_address": "7 Nalumansi Hajalah Cl, Kampala, Uganda",
+          "start_location": {
+            "lat": 0.3712634,
+            "lng": 32.5606139
+          },
+          "steps": [
+            {
+              "distance": {
+                "text": "1 m",
+                "value": 0
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 0
+              },
+              "end_location": {
+                "lat": 0.3712634,
+                "lng": 32.5606139
+              },
+              "html_instructions": "Head",
+              "polyline": {
+                "points": "kogAynveE"
+              },
+              "start_location": {
+                "lat": 0.3712634,
+                "lng": 32.5606139
+              },
+              "travel_mode": "DRIVING"
+            }
+          ],
+          "traffic_speed_entry": [],
+          "via_waypoint": []
+        }
+      ],
+      "overview_polyline": {
+        "points": "kogAynveE"
+      },
+      "summary": "",
+      "warnings": [],
+      "waypoint_order": []
+    }
+  ],
+  "status": "OK"
+}

@@ -1,0 +1,89 @@
+{
+  "geocoded_waypoints": [
+    {
+      "geocoder_status": "OK",
+      "place_id": "ChIJ_xTnNb26fRcRzeWxqRNBM_g",
+      "types": [
+        "street_address"
+      ]
+    },
+    {
+      "geocoder_status": "OK",
+      "place_id": "ChIJ_xTnNb26fRcRzeWxqRNBM_g",
+      "types": [
+        "street_address"
+      ]
+    }
+  ],
+  "routes": [
+    {
+      "bounds": {
+        "northeast": {
+          "lat": 0.3709942,
+          "lng": 32.5580917
+        },
+        "southwest": {
+          "lat": 0.3709942,
+          "lng": 32.5580917
+        }
+      },
+      "copyrights": "Map data ©2020",
+      "legs": [
+        {
+          "distance": {
+            "text": "1 m",
+            "value": 0
+          },
+          "duration": {
+            "text": "1 min",
+            "value": 0
+          },
+          "end_address": "373c Bombo Rd, Kampala, Uganda",
+          "end_location": {
+            "lat": 0.3709942,
+            "lng": 32.5580917
+          },
+          "start_address": "373c Bombo Rd, Kampala, Uganda",
+          "start_location": {
+            "lat": 0.3709942,
+            "lng": 32.5580917
+          },
+          "steps": [
+            {
+              "distance": {
+                "text": "1 m",
+                "value": 0
+              },
+              "duration": {
+                "text": "1 min",
+                "value": 0
+              },
+              "end_location": {
+                "lat": 0.3709942,
+                "lng": 32.5580917
+              },
+              "html_instructions": "Head on \u003cb\u003eBombo Rd\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eKampala - Gulu Hwy\u003c/b\u003e/\u003cwbr/\u003e\u003cb\u003eKampala-Masindi\u003c/b\u003e",
+              "polyline": {
+                "points": "umgAa_veE"
+              },
+              "start_location": {
+                "lat": 0.3709942,
+                "lng": 32.5580917
+              },
+              "travel_mode": "DRIVING"
+            }
+          ],
+          "traffic_speed_entry": [],
+          "via_waypoint": []
+        }
+      ],
+      "overview_polyline": {
+        "points": "umgAa_veE"
+      },
+      "summary": "Bombo Rd/Kampala - Gulu Hwy/Kampala-Masindi",
+      "warnings": [],
+      "waypoint_order": []
+    }
+  ],
+  "status": "OK"
+}
