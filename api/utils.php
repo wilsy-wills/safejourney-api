@@ -1,7 +1,7 @@
 <?php
 
-    define("username", "root");//safejourny_taxi
-    define("password", "");//mugwanya0754665613
+    define("username", "safejourny_taxi");//safejourny_taxi
+    define("password", "mugwanya0754665613");//mugwanya0754665613
     define("host", "localhost");
     define("database", "safejourny_database");
 
