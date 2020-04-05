@@ -26,7 +26,7 @@
         $msg = str_replace("'", "\'", "A customer has just sent a taxi reservation request");
         $message = ["body" => ['msg' => $msg, 'id' => $reservation_id, "title" => $title, "tag" => "reservation"]];
 
-        $statement = $connection->prepare("SELECT fcm_id FROM driver_info WHERE fcm_id <> ''");
+        $statement = $connection->prepare("SELECT fcm_id FROM user_drivers WHERE fcm_id <> ''");
         $statement->execute();
         $tokens = [];
         foreach ($statement->fetchAll() as $user) {

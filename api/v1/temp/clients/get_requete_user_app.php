@@ -1,14 +1,14 @@
 <?php
     function get_client_request(pdo $connection) {
         $driver_data = $connection->prepare("SELECT first_name, last_name, total_rating, total_raters 
-                FROM user_data  INNER JOIN driver_info ON driver_id = user_id WHERE user_id = :user_id LIMIT 1");
+                FROM user_data  INNER JOIN user_drivers ON driver_id = user_id WHERE user_id = :user_id LIMIT 1");
 
-        $statement = $connection->prepare("SELECT requests.id, requests.id_user_app, requests.latitude_depart, requests.longitude_depart,
-                            requests.latitude_arrivee, requests.longitude_arrivee, requests.statut, requests.statut_course, requests.id_conducteur_accepter,
-                            requests.creer, first_name, last_name, requests.distance, requests.montant, requests.duree
+        $statement = $connection->prepare("SELECT requests.request_id, requests.customer_id, requests.departure_lat, requests.departure_lon,
+                            requests.destination_lat, requests.destination_lon, requests.statut, requests.statut_course, requests.request_route,
+                            requests.date_requested, first_name, last_name, requests.distance, requests.request_status, requests.duree
         FROM requests, user_data
-        WHERE requests.id_user_app = user_data.user_id AND requests.id_user_app= :client_id AND requests.statut_course <> 'clôturer'
-        ORDER BY requests.id DESC");
+        WHERE requests.customer_id = user_data.user_id AND requests.customer_id= :client_id AND requests.statut_course <> 'clôturer'
+        ORDER BY requests.request_id DESC");
 
         $statement->bindParam(':client_id', $_GET['client_id']);
         $statement->execute();

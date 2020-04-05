@@ -3,8 +3,8 @@
         try {
             $current_time = date('Y-m-d H:i:s');
 
-            $statement = $connection->prepare("SELECT id, id_user_app, statut, fcm_token 
-                    FROM requests INNER JOIN user_data ON id_user_app = user_id WHERE id = :request_id LIMIT 1");
+            $statement = $connection->prepare("SELECT request_id, customer_id, statut, fcm_token 
+                    FROM requests INNER JOIN user_data ON customer_id = customer_id WHERE request_id = :request_id LIMIT 1");
             $statement->bindParam(':request_id', $_POST['id_requete']);
             $statement->execute();
             $request_data = $statement->fetch();
@@ -18,15 +18,15 @@
                 die();
             }
 
-            $statement = $connection->prepare("UPDATE requests SET statut='accepter', statut_course = 'en cours', id_conducteur_accepter = :driver_id, 
-                      modifier = :date_heure WHERE id = :request_id");
+            $statement = $connection->prepare("UPDATE requests SET statut='accepter', statut_course = 'en cours', request_route = :driver_id, 
+                      modifier = :date_heure WHERE request_id = :request_id");
             $statement->bindParam(':driver_id', $_POST['id_conducteur']);
             $statement->bindParam(':request_id', $_POST['id_requete']);
             $statement->bindParam(':date_heure', $current_time);
             $statement->execute();
 
             $driver_tokens = [];
-            $statement = $connection->prepare("SELECT fcm_id FROM driver_info WHERE fcm_id <> ''");
+            $statement = $connection->prepare("SELECT fcm_id FROM user_drivers WHERE fcm_id <> ''");
             $statement->execute();
             foreach ($statement->fetchAll() as $row) {
                 $driver_tokens[] = $row['fcm_id'];

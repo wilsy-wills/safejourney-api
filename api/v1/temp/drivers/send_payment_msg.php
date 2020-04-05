@@ -1,9 +1,9 @@
 <?php
     function send_payment_message(pdo $connection) {
         try {
-            $statement = $connection->prepare("SELECT id_user_app, fcm_token 
-                            FROM requests INNER JOIN user_data ON requests.id_user_app = user_data.user_id 
-                            WHERE id = :request_id LIMIT 1");
+            $statement = $connection->prepare("SELECT customer_id, fcm_token 
+                            FROM requests INNER JOIN user_data ON requests.customer_id = user_data.user_id 
+                            WHERE request_id = :request_id LIMIT 1");
             $statement->bindParam(':request_id', $_POST['request_id']);
             $statement->execute();
             $user_data = $statement->fetch();

@@ -1,6 +1,6 @@
 <?php
     function set_driver_position(pdo $connection) {
-        $statement = $connection->prepare("UPDATE driver_info SET latitude = :latitude, longitude = :longitude, 
+        $statement = $connection->prepare("UPDATE user_drivers SET latitude = :latitude, longitude = :longitude, 
                        updated = :updated WHERE driver_id = :driver_id");
         $statement->bindParam(':latitude', $_POST['latitude']);
         $statement->bindParam(':longitude', $_POST['longitude']);

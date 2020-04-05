@@ -2,12 +2,12 @@
     function get_course(pdo $connection) {
         $driver_statement = $connection->prepare("SELECT first_name, last_name FROM user_data WHERE user_id = :driver_id LIMIT 1");
 
-        $statement = $connection->prepare("SELECT requests.id, requests.id_user_app, requests.latitude_depart, requests.longitude_depart,
-                                requests.latitude_arrivee, requests.longitude_arrivee, requests.statut_course, requests.id_conducteur_accepter,
-                                requests.id_user_app, requests.creer, first_name, last_name, requests.distance, requests.montant, requests.duree
+        $statement = $connection->prepare("SELECT requests.request_id, requests.customer_id, requests.departure_lat, requests.departure_lon,
+                                requests.destination_lat, requests.destination_lon, requests.statut_course, requests.request_route,
+                                requests.customer_id, requests.date_requested, first_name, last_name, requests.distance, requests.request_status, requests.duree
                             FROM requests, user_data
-                            WHERE requests.id_user_app = user_id  AND requests.statut_course != ''
-                            ORDER BY requests.id DESC");
+                            WHERE requests.customer_id = customer_id  AND requests.statut_course != ''
+                            ORDER BY requests.request_id DESC");
         $statement->execute();
         $output = [];
 

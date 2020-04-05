@@ -5,8 +5,8 @@
         }
 
         $current_date = date('Y-m-d H:i:s');
-        $statement = $connection->prepare("INSERT INTO requests(id_user_app, latitude_depart, longitude_depart, latitude_arrivee, longitude_arrivee,
-                       statut, creer, distance, montant, duree, id_conducteur_accepter, statut_course, modifier) VALUES 
+        $statement = $connection->prepare("INSERT INTO requests(customer_id, departure_lat, departure_lon, destination_lat, destination_lon,
+                       statut, date_requested, distance, request_status, duree, request_route, statut_course, modifier) VALUES 
                         (:user_id, :lat1, :lng1, :lat2, :lng2,'en cours', :date_heure, :distance, :cout, :duree, 0, '', :date_heure)");
 
         $statement->bindParam(':lat1', $_POST['lat1']);
@@ -22,8 +22,8 @@
         $request_id = $connection->lastInsertId();
 
         $statement = $connection->prepare("SELECT t.id, t.statut, driver.latitude, driver.longitude, driver.driver_id AS driver_id, fcm_id
-                        FROM tj_taxi t, tj_type_vehicule tv, tj_affectation a, driver_info driver
-                        WHERE t.id_type_vehicule = tv.id AND a.id_taxi = t.id AND a.id_conducteur = driver.driver_id AND t.statut = 'yes' 
+                        FROM vehicles t, vehicle_types tv, tj_affectation a, user_drivers driver
+                        WHERE t.id_type_vehicule = tv.type_id AND a.id_taxi = t.id AND a.id_conducteur = driver.driver_id AND t.statut = 'yes' 
                             AND driver.online != 'no' AND  fcm_id <> ''");
         $statement->execute();
 
