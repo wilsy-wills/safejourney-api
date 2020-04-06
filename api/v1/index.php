@@ -1,7 +1,10 @@
 <?php
-    use v1\accounts\Accounts;
+
+    namespace v1;
 
     require_once '../utils.php';
+    require_once 'Accounts.php';
+
     new Entry();
 
     class Entry {

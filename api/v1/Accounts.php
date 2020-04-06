@@ -1,6 +1,6 @@
 <?php
 
-    namespace v1\accounts;
+    namespace v1;
 
     use Exception;
     use PDO;

@@ -1,6 +1,6 @@
 <?php
 
-    namespace v1\requests;
+    namespace v1;
 
     use PDO;
 
