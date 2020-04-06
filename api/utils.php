@@ -117,7 +117,7 @@
             'priority'          => 'high',
         ];
 
-        $fcm_key = "AIzaSyByHBuhctNLUXz2FdjqTb52tP2AlN1Wu4o";
+        $fcm_key = "AIzaSyDDdqDb8FA1iImrCVPCNbMC92HTTVWhw4o";
 
         $headers = ['Authorization:key=' . $fcm_key, 'Content-Type:application/json'];
         $ch = curl_init();
